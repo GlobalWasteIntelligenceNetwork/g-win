@@ -64,12 +64,6 @@ function login() {
 }
 </script>
 
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password" type="password">
-
-<button onclick="signUp()">Create Account</button>
-<button onclick="login()">Login</button>
-
 <script>
 auth.onAuthStateChanged(user => {
   if (!user) {
