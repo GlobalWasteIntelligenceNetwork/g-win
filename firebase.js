@@ -3,11 +3,9 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } f
 
 const firebaseConfig = {
 
-apiKey: "YOURKEY",
-
-authDomain: "YOURDOMAIN",
-
-projectId: "YOURPROJECT"
+apiKey: "AIzaSyD2zv3-hzcb3RiqYDhbZAEnj1Spka9ONmw",
+authDomain: "g-win-3e858.firebaseapp.com",
+projectId: "g-win-3e858"
 
 };
 
