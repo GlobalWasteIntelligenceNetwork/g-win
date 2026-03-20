@@ -1,54 +1,56 @@
 <script>
 
-// ✅ Correct Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyD2zv3-hzcb3RiqYDhbZAEnj1Spka9ONmw",
   authDomain: "g-win-3e858.firebaseapp.com",
   projectId: "g-win-3e858",
-  storageBucket: "g-win-3e858.appspot.com",
+  storageBucket: "g-win-3e858.firebasestorage.app",
   messagingSenderId: "943145467795",
   appId: "1:943145467795:web:baa679a097334fc5e77266"
 };
 
-// ✅ Initialize Firebase (correct for compat version)
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 
-// ✅ Sign Up
 function signUp(){
 
 const email = document.getElementById("email").value;
 const password = document.getElementById("password").value;
 
 auth.createUserWithEmailAndPassword(email,password)
-.then(()=>{
+.then((userCredential)=>{
 
 alert("Account created!");
+
 window.location.href = "dashboard.html";
 
 })
 .catch((error)=>{
+
 alert(error.message);
+
 });
 
 }
 
-// ✅ Login
 function login(){
 
 const email = document.getElementById("email").value;
 const password = document.getElementById("password").value;
 
 auth.signInWithEmailAndPassword(email,password)
-.then(()=>{
+.then((userCredential)=>{
 
 alert("Login successful!");
+
 window.location.href = "dashboard.html";
 
 })
 .catch((error)=>{
+
 alert(error.message);
+
 });
 
 }
