@@ -1,43 +1,50 @@
+// Import Firebase modular SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 
+// Your Firebase config
 const firebaseConfig = {
-
-apiKey: "AIzaSyD2zv3-hzcb3RiqYDhbZAEnj1Spka9ONmw",
-authDomain: "g-win-3e858.firebaseapp.com",
-projectId: "g-win-3e858"
-
+  apiKey: "AIzaSyD2zv3-hzcb3RiqYDhbZAEnj1Spka9ONmw",
+  authDomain: "g-win-3e858.firebaseapp.com",
+  projectId: "g-win-3e858"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-window.signUp=function(){
+// ---------------- SIGN UP ----------------
+window.signUp = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-const email=document.getElementById("email").value;
-const password=document.getElementById("password").value;
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      alert("Account created successfully!");
 
-createUserWithEmailAndPassword(auth,email,password)
-
-.then(()=>{
-
-alert("Account created");
-
-});
-
+      // Redirect to application page instead of dashboard
+      window.location.href = "application.html";
+    })
+    .catch((error) => {
+      // Show error message
+      alert("Error: " + error.message);
+    });
 }
 
-window.login=function(){
+// ---------------- LOGIN ----------------
+window.login = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-const email=document.getElementById("email").value;
-const password=document.getElementById("password").value;
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      alert("Login successful!");
 
-signInWithEmailAndPassword(auth,email,password)
-
-.then(()=>{
-
-window.location="dashboard.html";
-
-});
-
+      // Redirect logged-in users to dashboard
+      window.location.href = "dashboard.html";
+    })
+    .catch((error) => {
+      // Show error message
+      alert("Error: " + error.message);
+    });
 }
