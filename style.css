@@ -117,91 +117,57 @@ p {
   transform: translateY(-10px);
 }
 
-/* -------- APPLE ABOUT SECTION -------- */
-
-.about-apple{
-  padding:120px 20px;
-  text-align:center;
-  background:#ffffff;
+.founder-apple img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-.subtitle{
-  color:#6b7280;
-  margin-bottom:40px;
+.about-apple {
+  padding: 100px 20px;
+  text-align: center;
+  background: #ffffff;
 }
 
-
-.globe{
-  width:120px;
-  height:120px;
-  margin:40px auto;
-  border-radius:50%;
-  background: radial-gradient(circle at 30% 30%, #2c7a7b, #1a202c);
-  animation: spin 10s linear infinite;
-  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+.about-apple h1 {
+  font-size: 56px;
+  font-weight: 700;
 }
 
-@keyframes spin{
-  0%{transform: rotate(0deg);}
-  100%{transform: rotate(360deg);}
+.subtitle {
+  color: #6b7280;
+  font-size: 20px;
+  margin-bottom: 40px;
 }
 
-
-.founder-apple{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:center;
-  gap:50px;
-  margin-top:60px;
+.founder-apple {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
-.founder-apple img{
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  object-fit:cover;
-  box-shadow:0 20px 40px rgba(0,0,0,0.15);
-  transition:0.4s;
+.founder-text {
+  max-width: 500px;
+  text-align: left;
 }
 
-.founder-apple img:hover{
-  transform:scale(1.05);
+.founder-text h3 {
+  font-size: 26px;
+  font-weight: 600;
 }
 
-.founder-text{
-  max-width:500px;
-  text-align:left;
+.founder-text p {
+  color: #4b5563;
+  font-size: 17px;
 }
 
-
-.impact{
-  display:flex;
-  justify-content:center;
-  gap:60px;
-  margin-top:80px;
-  flex-wrap:wrap;
-}
-
-.counter{
-  text-align:center;
-}
-
-.counter h2{
-  font-size:42px;
-  color:#2c7a7b;
-}
-
-
-.fade-in{
-  opacity:0;
-  transform:translateY(40px);
-  transition:all 0.8s ease;
-}
-
-.fade-in.show{
-  opacity:1;
-  transform:translateY(0);
+section {
+  margin-bottom: 80px;
 }
 
 /* ---------------- Parallax Section ---------------- */
@@ -228,6 +194,7 @@ p {
   width: 90%;
   border-radius: 10px;
 }
+
 
 /* ---------------- Login / Join Form ---------------- */
 .login {
