@@ -136,10 +136,10 @@ p {
   font-weight: 700;
 }
 
-.subtitle {
-  color: #6b7280;
-  font-size: 20px;
-  margin-bottom: 40px;
+.subtitle{
+  font-size:20px;
+  color:#6b7280;
+  margin-bottom:40px;
 }
 
 .founder-apple {
@@ -185,6 +185,25 @@ section {
   color: white;
   text-align: center;
   font-size: 28px;
+}
+.contributors{
+  margin-top:80px;
+  text-align:center;
+}
+
+.contributors-list{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:20px;
+}
+
+.contributor img{
+  width:80px;
+}
+
+.contributor p{
+  margin-top:10px;
 }
 
 /* ---------------- Map ---------------- */
