@@ -63,7 +63,7 @@ const password = document.getElementById("password").value;
 auth.createUserWithEmailAndPassword(email,password)
 .then(()=>{
 alert("Account created!");
-window.location.href = "dashboard.html";
+window.location.href = "application.html";
 })
 .catch((error)=>{
 alert(error.message);
@@ -77,7 +77,7 @@ const password = document.getElementById("password").value;
 auth.signInWithEmailAndPassword(email,password)
 .then(()=>{
 alert("Login successful!");
-window.location.href = "dashboard.html";
+window.location.href = "application.html";
 })
 .catch((error)=>{
 alert(error.message);
