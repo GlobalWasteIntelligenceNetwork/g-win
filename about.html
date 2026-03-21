@@ -22,28 +22,100 @@
 
 </nav>
 
-<section class="about">
+<section class="about-apple">
 
-<div class="founder">
+<h1 class="fade-in">About G-WIN</h1>
+
+<p class="subtitle fade-in">
+A global movement transforming waste into climate action.
+</p>
+
+<!-- 🌍 Animated Globe -->
+<div class="globe fade-in"></div>
+
+<!-- 👤 Founder -->
+<div class="founder-apple fade-in">
 
 <img src="https://image2url.com/r2/default/images/1774033331569-d9f659c1-b7bc-4dab-b768-cc470d4c39fc.jpg">
 
-<div>
+<div class="founder-text">
 
 <h2>Founder</h2>
-
 <h3>Yani Ma Zhang</h3>
 
 <p>
-Yani Ma Zhang is a highschool student who created the Global Waste Intelligence Network to help communities measure and reduce their waste footprint. The platform connects students, schools, and organizations to generate data-driven solutions for climate action. G-WIN is the first youth-led waste dataset, with the goal of creating measurable reduction in landfill waste among pilot communities.
-
+Yani Ma Zhang is a high school student who created the Global Waste Intelligence Network to help communities measure and reduce their waste footprint. G-WIN is the first youth-led global waste dataset, aiming to create measurable reductions in landfill waste worldwide.
 </p>
 
 </div>
 
 </div>
 
+<!-- 📊 Impact Counters -->
+<div class="impact fade-in">
+
+<div class="counter">
+<h2 id="count1">0</h2>
+<p>Communities Engaged</p>
+</div>
+
+<div class="counter">
+<h2 id="count2">0</h2>
+<p>Kg Waste Tracked</p>
+</div>
+
+<div class="counter">
+<h2 id="count3">0</h2>
+<p>Countries Reached</p>
+</div>
+
+</div>
+
 </section>
+
+<!-- Scroll Animation Script -->
+<script>
+
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries){
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, appearOptions);
+
+faders.forEach(el => {
+  appearOnScroll.observe(el);
+});
+
+// Counter Animation
+function animateCounter(id, target){
+let count = 0;
+let speed = target / 100;
+
+let update = setInterval(()=>{
+  count += speed;
+  if(count >= target){
+    count = target;
+    clearInterval(update);
+  }
+  document.getElementById(id).innerText = Math.floor(count);
+}, 20);
+}
+
+window.onload = function(){
+  animateCounter("count1", 120);
+  animateCounter("count2", 5000);
+  animateCounter("count3", 18);
+}
+
+</script>
 
 </body>
 </html>
