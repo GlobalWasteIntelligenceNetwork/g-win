@@ -46,7 +46,7 @@ p {
 
 .logo {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 35px;
 }
 
 .menu a {
@@ -187,7 +187,6 @@ section {
   font-size: 28px;
 }
 /* -------------------------------- */
-/* ---------------- Contributors Section ---------------- */
 
 .contributors{
   background:#f2f2f2;
@@ -354,4 +353,100 @@ button:hover{
 .success{
   text-align:center;
   margin-top:150px;
+}
+/* ---------- Mission Section ---------- */
+
+.mission-section{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:center;
+gap:60px;
+padding:100px 20px;
+background:white;
+}
+
+.mission-text{
+max-width:500px;
+}
+
+.mission-text h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.mission-text p{
+font-size:18px;
+color:#555;
+margin-bottom:15px;
+}
+
+.mission-visual img{
+width:420px;
+border-radius:12px;
+box-shadow:0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* ---------- Vision Timeline ---------- */
+
+.vision{
+background:#f7f7f7;
+padding:100px 20px;
+text-align:center;
+}
+
+.vision h2{
+font-size:36px;
+margin-bottom:60px;
+}
+
+.timeline{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+}
+
+.timeline-step{
+max-width:220px;
+}
+
+.timeline-step span{
+font-size:40px;
+font-weight:700;
+color:#2c7a7b;
+display:block;
+margin-bottom:10px;
+}
+
+.timeline-step h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.timeline-step p{
+color:#555;
+}
+
+/* ---------- Quote Section ---------- */
+
+.vision-quote{
+padding:120px 20px;
+text-align:center;
+background:linear-gradient(135deg,#2c7a7b,#1a202c);
+color:white;
+}
+
+.vision-quote h2{
+font-size:34px;
+max-width:700px;
+margin:auto;
+margin-bottom:20px;
+}
+
+.vision-quote p{
+max-width:600px;
+margin:auto;
+font-size:18px;
+opacity:0.9;
 }
