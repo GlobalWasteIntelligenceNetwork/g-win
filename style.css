@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
-/* ---------------- General ---------------- */
+/* -------------------------------- */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -32,7 +32,7 @@ p {
   margin: 10px 0;
 }
 
-/* ---------------- Navigation ---------------- */
+/* -------------------------------- */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -61,7 +61,7 @@ p {
   color: #2c7a7b;
 }
 
-/* ---------------- Hero Sections ---------------- */
+/* -------------------------------- */
 .hero {
   height: 80vh;
   display: flex;
@@ -94,7 +94,7 @@ p {
   background: #e6fffa;
 }
 
-/* ---------------- Features / Steps Cards ---------------- */
+/* -------------------------------- */
 .features, .steps {
   display: flex;
   flex-wrap: wrap;
@@ -170,7 +170,7 @@ section {
   margin-bottom: 80px;
 }
 
-/* ---------------- Parallax Section ---------------- */
+/* -------------------------------- */
 .parallax {
   height: 400px;
   background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
@@ -186,27 +186,63 @@ section {
   text-align: center;
   font-size: 28px;
 }
+/* -------------------------------- */
+/* ---------------- Contributors Section ---------------- */
+
 .contributors{
-  margin-top:80px;
+  background:#f2f2f2;
+  padding:80px 20px;
   text-align:center;
 }
 
-.contributors-list{
+.contributors h2{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.contributors-sub{
+  color:#555;
+  margin-bottom:40px;
+}
+
+.contributors-grid{
   display:flex;
+  flex-wrap:wrap;
   justify-content:center;
-  gap:40px;
-  margin-top:20px;
+  gap:30px;
 }
 
-.contributor img{
+.contributor-card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  width:220px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.contributor-card:hover{
+  transform:translateY(-6px);
+}
+
+.contributor-card img{
   width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
 }
 
-.contributor p{
-  margin-top:10px;
+.contributor-card h3{
+  font-size:18px;
+  margin-bottom:5px;
 }
 
-/* ---------------- Map ---------------- */
+.contributor-card p{
+  font-size:14px;
+  color:#666;
+}
+/* -------------------------------- */
 #map {
   height: 400px;
   margin: 40px auto;
@@ -215,7 +251,7 @@ section {
 }
 
 
-/* ---------------- Login / Join Form ---------------- */
+/* -------------------------------- */
 .login {
   display: flex;
   flex-direction: column;
@@ -248,14 +284,14 @@ section {
   background: #1a5959;
 }
 
-/* ---------------- Dashboard Chart ---------------- */
+/* -------------------------------- */
 canvas {
   max-width: 90%;
   margin: 40px auto;
   display: block;
 }
 
-/* ---------------- Footer ---------------- */
+/* -------------------------------- */
 footer {
   background: #1a202c;
   color: white;
