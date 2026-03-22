@@ -37,18 +37,17 @@
 <input placeholder="Region / Country" required>
 
 <input type="email" placeholder="Email" required>
-<input placeholder="Phone Number" required>
 
 <h3>Guardian Information</h3>
 <input placeholder="Guardian Name" required>
-<input placeholder="Guardian Contact" required>
+<input placeholder="Guardian Contact (Email)" required>
 
-<h3>Education</h3>
-<input placeholder="Grade" required>
-<input placeholder="School Year Average (your country format)" required>
+<h3>Education (Student)</h3>
+<input placeholder="Grade" optional>
+<input placeholder="School Year Average (your country format)" optional>
 
 <h3>Motivation</h3>
-<textarea maxlength="100" placeholder="In 100 words, describe what drives your passion for environmental change and how you hope to make an impact." required></textarea>
+<textarea maxlength="100" placeholder="In a brief paragraph (max. 100 words), describe what drives your passion for environmental change and how you hope to make an impact." required></textarea>
 
 <label>
 <input type="checkbox" required>
@@ -87,9 +86,8 @@ document.getElementById("applicationForm").addEventListener("submit", function(e
         gender: document.querySelector('select').value,
         region: document.querySelector('input[placeholder="Region / Country"]').value,
         email: document.querySelector('input[type="email"]').value,
-        phone: document.querySelector('input[placeholder="Phone Number"]').value,
         guardian: document.querySelector('input[placeholder="Guardian Name"]').value,
-        guardianContact: document.querySelector('input[placeholder="Guardian Contact"]').value,
+        guardianContact: document.querySelector('input[placeholder="Guardian Contact (Email)"]').value,
         grade: document.querySelector('input[placeholder="Grade"]').value,
         average: document.querySelector('input[placeholder="School Year Average (your country format)"]').value,
         motivation: document.querySelector('textarea').value,
