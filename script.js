@@ -4,9 +4,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
 attribution:'OpenStreetMap'
 }).addTo(map);
 
-L.marker([40.7,-74]).addTo(map).bindPopup("New York");
+L.marker([44,-78]).addTo(map).bindPopup("Canada");
 
-L.marker([51.5,-0.1]).addTo(map).bindPopup("London");
+L.marker([40,-3.7]).addTo(map).bindPopup("Spain");
 
 const ctx=document.getElementById('chart');
 
@@ -19,7 +19,7 @@ labels:['Landfill','Recycling','Compost'],
 datasets:[{
 label:'Waste Data',
 data:[120,80,40],
-backgroundColor:['red','blue','green']
+backgroundColor:['brown','yellow','green']
 }]
 }
 
