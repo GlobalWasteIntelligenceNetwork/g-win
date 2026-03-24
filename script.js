@@ -22,5 +22,7 @@ data:[120,80,40],
 backgroundColor:['brown','yellow','green']
 }]
 }
+const counters = document.querySelectorAll(".counter h2");
+const targets = [2,25,2];
 
 });
