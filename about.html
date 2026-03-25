@@ -6,7 +6,6 @@
 <title>About G-WIN</title>
 
 <link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
 
 </head>
 
@@ -15,8 +14,8 @@
 <nav class="nav">
 
 <div class="logo-container">
-  <a href="index.html" class="logo-text">G-WIN</a>
-  <img src="logo.png" class="logo-img">
+<a href="index.html" class="logo-text">G-WIN</a>
+<img src="logo.png" class="logo-img">
 </div>
 
 <div class="menu">
@@ -29,7 +28,6 @@
 </nav>
 
 <section class="about-apple">
-<div class="founder-apple">
 
 <h1 class="fade-in">About G-WIN</h1>
 
@@ -70,11 +68,15 @@ Yani Ma Zhang is a Fellow from Climate Leaders Fellowship (Rustic Pathways x Sta
 <h2 id="count3">2</h2>
 <p>Countries Reached</p>
 </div>
+
 </div>
+
+</section>
 
 <section class="contributors">
 
 <h2>Contributors</h2>
+
 <p class="contributors-sub">
 Students, schools, and organizations helping build the Global Waste Intelligence Network.
 </p>
@@ -103,25 +105,24 @@ Students, schools, and organizations helping build the Global Waste Intelligence
 
 </section>
 
-
 <script>
 
 const faders = document.querySelectorAll('.fade-in');
 
 const appearOptions = {
-  threshold: 0.2
+threshold: 0.2
 };
 
 const appearOnScroll = new IntersectionObserver(function(entries){
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
+});
 }, appearOptions);
 
 faders.forEach(el => {
-  appearOnScroll.observe(el);
+appearOnScroll.observe(el);
 });
 
 // Counter Animation
@@ -130,19 +131,19 @@ let count = 0;
 let speed = target / 100;
 
 let update = setInterval(()=>{
-  count += speed;
-  if(count >= target){
-    count = target;
-    clearInterval(update);
-  }
-  document.getElementById(id).innerText = Math.floor(count);
+count += speed;
+if(count >= target){
+count = target;
+clearInterval(update);
+}
+document.getElementById(id).innerText = Math.floor(count);
 }, 20);
 }
 
 window.onload = function(){
-  animateCounter("count1", 120);
-  animateCounter("count2", 5000);
-  animateCounter("count3", 18);
+animateCounter("count1", 120);
+animateCounter("count2", 5000);
+animateCounter("count3", 18);
 }
 
 </script>
