@@ -22,27 +22,10 @@ new Chart(ctx,{
   }
 });
 
-const counters = document.querySelectorAll(".counter h2");
-
-const targets = [2,25,2];
-
-counters.forEach((counter, index) => {
-
-  let count = 0;
-  const target = targets[index];
-
-  const updateCounter = () => {
-
-    if(count < target){
-      count++;
-      counter.innerText = count;
-      setTimeout(updateCounter,50);
-    } else {
-      counter.innerText = target;
-    }
-
-  };
-
-  updateCounter();
+window.onload = function(){
+animateCounter("count1", 2);
+animateCounter("count2", 25);
+animateCounter("count3", 2);
+}
 
 });
