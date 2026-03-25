@@ -31,6 +31,7 @@ window.signUp = function() {
     });
 }
 
+window.location.href = "submitted.html";
 ----------------
 window.login = function() {
   const email = document.getElementById("email").value;
