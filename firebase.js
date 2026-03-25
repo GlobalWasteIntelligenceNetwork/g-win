@@ -31,8 +31,6 @@ window.signUp = function() {
     });
 }
 
-window.location.href = "submitted.html";
-----------------
 window.login = function() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -49,7 +47,12 @@ window.login = function() {
       alert("Error: " + error.message);
     });
 }
-
+window.location.href = "submitted.html";
+    })
+    .catch((error) => {
+        alert("Error saving application: " + error.message);
+    });
+});
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -57,4 +60,4 @@ service cloud.firestore {
       allow read, write: if true;
     }
   }
-}
+}   
