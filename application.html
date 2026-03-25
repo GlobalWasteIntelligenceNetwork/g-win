@@ -104,7 +104,7 @@ document.getElementById("applicationForm").addEventListener("submit", function(e
         }, function(error) {
             console.error('Email sending failed:', error);
         });
-
+<form onsubmit="submitApplication(event)">
 window.location.href = "submitted.html";
     })
     .catch((error) => {
