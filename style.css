@@ -354,7 +354,7 @@ button:hover{
   text-align:center;
   margin-top:150px;
 }
-/* ---------- Mission Section ---------- */
+/* -------------------- */
 
 .mission-section{
 display:flex;
@@ -387,7 +387,7 @@ border-radius:12px;
 box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
 
-/* ---------- Vision Timeline ---------- */
+/* -------------------- */
 
 .vision{
 background:#f7f7f7;
@@ -428,7 +428,7 @@ margin-bottom:10px;
 color:#555;
 }
 
-/* ---------- Quote Section ---------- */
+/* -------------------- */
 
 .vision-quote{
 padding:120px 20px;
