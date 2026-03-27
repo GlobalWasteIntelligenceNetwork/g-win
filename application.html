@@ -61,50 +61,61 @@ I consent to G-WIN collecting and using my information for application and commu
 <script>
 // Initialize EmailJS
 (function(){
-    emailjs.init("4NwtAQCquOAMaqEbO");
+emailjs.init("4NwtAQCquOAMaqEbO");
 })();
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyD2zv3-hzcb3RiqYDhbZAEnj1Spka9ONmw",
-  authDomain: "g-win-3e858.firebaseapp.com",
-  projectId: "g-win-3e858",
-  storageBucket: "g-win-3e858.firebasestorage.app",
-  messagingSenderId: "943145467795",
-  appId: "1:943145467795:web:baa679a097334fc5e77266"
+apiKey: "AIzaSyD2zv3-hzcb3RiqYDhbZAEnj1Spka9ONmw",
+authDomain: "g-win-3e858.firebaseapp.com",
+projectId: "g-win-3e858",
+storageBucket: "g-win-3e858.firebasestorage.app",
+messagingSenderId: "943145467795",
+appId: "1:943145467795:web:baa679a097334fc5e77266"
 };
+
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 // Handle form submit
 document.getElementById("applicationForm").addEventListener("submit", function(e){
-    e.preventDefault();
+e.preventDefault();
 
-    const data = {
-        name: document.querySelector('input[placeholder="Full Name"]').value,
-        dob: document.querySelector('input[type="date"]').value,
-        gender: document.querySelector('select').value,
-        region: document.querySelector('input[placeholder="Region / Country"]').value,
-        email: document.querySelector('input[type="email"]').value,
-        guardian: document.querySelector('input[placeholder="Guardian Name"]').value,
-        guardianContact: document.querySelector('input[placeholder="Guardian Contact (Email)"]').value,
-        grade: document.querySelector('input[placeholder="Grade"]').value,
-        average: document.querySelector('input[placeholder="School Year Average (your country format)"]').value,
-        motivation: document.querySelector('textarea').value,
-        timestamp: new Date()
-    };
+const data = {
+name: document.querySelector('input[placeholder="Full Name"]').value,
+dob: document.querySelector('input[type="date"]').value,
+gender: document.querySelector('select').value,
+region: document.querySelector('input[placeholder="Region / Country"]').value,
+email: document.querySelector('input[type="email"]').value,
+guardian: document.querySelector('input[placeholder="Guardian Name"]').value,
+guardianContact: document.querySelector('input[placeholder="Guardian Contact (Email)"]').value,
+grade: document.querySelector('input[placeholder="Grade"]').value,
+average: document.querySelector('input[placeholder="School Year Average (your country format)"]').value,
+motivation: document.querySelector('textarea').value,
+timestamp: new Date()
+};
 
-    // Save to Firebase
-    db.collection("applications").add(data)
-    .then(() => {
-        // Send auto email
-        emailjs.send("service_h3ct7gl", "__ejs-test-mail-service__", data)
-        .then(function(response) {
-            console.log('Email sent successfully!', response.status, response.text);
-        }, function(error) {
-            console.error('Email sending failed:', error);
-        });
-<form onsubmit="submitApplication(event)">
+// Save to Firebase
+db.collection("applications").add(data)
+.then(() => {
+
+emailjs.send("service_h3ct7gl", "__ejs-test-mail-service__", data)
+.then(function(response){
+console.log("Email sent", response);
+})
+.catch(function(error){
+console.log("Email error", error);
+});
+
+// Redirect after submit
+window.location.href = "submitted.html";
+
+})
+.catch((error)=>{
+alert("Error saving application: " + error.message);
+});
+
+});
 </script>
 
 </body>
