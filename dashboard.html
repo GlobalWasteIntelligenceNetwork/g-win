@@ -3,11 +3,13 @@
 
 <head>
 
-<title>Waste Dashboard</title>
+<meta charset="UTF-8">
+
+<title>G-WIN Environmental Intelligence Dashboard</title>
 
 <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
@@ -20,8 +22,8 @@
 <nav class="nav">
 
 <div class="logo-container">
-  <a href="index.html" class="logo-text">G-WIN</a>
-  <img src="logo.png" class="logo-img">
+<a href="index.html" class="logo-text">G-WIN</a>
+<img src="logo.png" class="logo-img">
 </div>
 
 <div class="menu">
@@ -32,15 +34,137 @@
 </div>
 
 </nav>
-  
-<h1>Community Waste Dashboard</h1>
+
+<h1>G-WIN Environmental Intelligence Dashboard</h1>
+
+<div class="stats-row">
+
+<div class="stat-card">
+<h2>6</h2>
+<p>Locations Mapped</p>
+</div>
+
+<div class="stat-card">
+<h2>4</h2>
+<p>Heavy Litter Reports</p>
+</div>
+
+<div class="stat-card">
+<h2>6</h2>
+<p>Community Observations</p>
+</div>
+
+</div>
 
 <div id="map"></div>
 
 <canvas id="chart"></canvas>
 
-<script src="script.js"></script>
+<script>
+
+var map = L.map('map').setView([44.30, -78.32], 12);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+attribution:'OpenStreetMap'
+}).addTo(map);
+
+L.marker([44.288,-78.338])
+.addTo(map)
+.bindPopup(`
+<b>Monaghan Rd Bus Stop</b><br>
+🔴 Heavy litter<br>
+Cause: Nearby mall & fast-food locations<br>
+Solution: Install public garbage bin
+`);
+
+L.marker([44.314,-78.346])
+.addTo(map)
+.bindPopup(`
+<b>Jackson Park</b><br>
+🔴 Heavy litter<br>
+Cause: Overflowing bins<br>
+Solution: More bins and cleanup events
+`);
+
+L.marker([44.292,-78.292])
+.addTo(map)
+.bindPopup(`
+<b>Beavermead Park</b><br>
+🟢 Generally clean area<br>
+Issue: Microplastics found<br>
+Solution: Awareness campaigns
+`);
+
+L.marker([44.304,-78.302])
+.addTo(map)
+.bindPopup(`
+<b>Ashburnham Memorial Park</b><br>
+🔴 Illegal dumping<br>
+Cause: Lack of monitoring<br>
+Solution: Better monitoring and maintenance
+`);
+
+L.marker([44.305,-78.330])
+.addTo(map)
+.bindPopup(`
+<b>Ford Street</b><br>
+🟡 Lack of garbage bins<br>
+Cause: Residential area<br>
+Solution: Strategic public bin placement
+`);
+
+L.marker([44.272,-78.322])
+.addTo(map)
+.bindPopup(`
+<b>St Peter Catholic Secondary School</b><br>
+🔴 Heavy litter<br>
+Cause: Student food packaging<br>
+Solution: More bins and awareness
+`);
+
+const ctx = document.getElementById('chart');
+
+new Chart(ctx, {
+
+type: 'bar',
+
+data: {
+
+labels: [
+'Heavy Litter',
+'Overflowing Bins',
+'Clean Areas'
+],
+
+datasets: [{
+label: 'Community Reports',
+data: [4,1,1],
+
+backgroundColor: [
+'red',
+'orange',
+'green'
+]
+
+}]
+},
+
+options: {
+
+responsive: true,
+
+plugins: {
+legend: {
+display: false
+}
+}
+
+}
+
+});
+
+</script>
 
 </body>
-</html>
 
+</html>
